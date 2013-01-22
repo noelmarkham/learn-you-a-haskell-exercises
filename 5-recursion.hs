@@ -11,7 +11,7 @@ power x y = undefined
 fib :: (Num a, Eq a) => a -> [a]
 fib x = undefined
 
--- Not recursive but calc this
+-- This is not recursive, but have a go anyway.
 -- Create a function which takes two parameters, a number and a step
 -- The result is the sign of the original number reversed, and the step added to the absolute value
 -- Confused? Some examples: stepReverseSign 6 2 = -8
