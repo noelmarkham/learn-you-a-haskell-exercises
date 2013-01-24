@@ -34,7 +34,7 @@ stepReverseSign a = undefined
  - Given a tolerance, say, 0.001, it will return a tuple.
  - fst is pi to an accuracy of the tolerance, 0.001 in this case
  - snd is the number of recursive steps taken to calculate it, after all this chapter is about recursion!
- - Example: piCalc 0.01 = (3.1420924036835256,2000)
+ - Example: piCalc 0.001 = (3.1420924036835256,2000)
 
  - The piCalc' function is defined as 
  - piCalc' :: (Ord a, Fractional a, Integral b) => a -> a -> a -> b -> (a, b)
