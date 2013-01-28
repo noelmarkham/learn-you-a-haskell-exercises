@@ -1,4 +1,6 @@
--- Sum the numbers between two values recursively, assuming a < b when the function is first called
+-- Sum the numbers between two inclusive values recursively, assuming a < b when the function is first called
+-- Example: sumInts 0 1 = 1
+--          sumInts 1 3 = 6
 sumInts :: Int -> Int -> Int
 sumInts a b = undefined
 
@@ -25,9 +27,16 @@ hoSumSquares = undefined
 hoSumInts :: Int -> Int -> Int
 hoSumInts = undefined
 
--- Create a new higher order method which generalises over the function provided by sum (That is, (+) :: Int -> Int -> Int)
+-- Create a new higher order method which generalises over the function provided by sum (That is, (+) :: Int -> Int -> Int) between a and b
+-- This will give the ability to perform utilities such as the prodcut of all squares (or any other Int -> Int function) between a and b
 -- You will also need to generalise the base case
 -- You can also define the function signature yourself, which leaves you free to define the parameters and their order
+-- To be clear, your function will need to handle:
+--  - A start value, a :: Int
+--  - A end value, b :: Int
+--  - A function to apply to each value, op :: Int -> Int
+--  - A function to apply between each value, f :: Int -> Int -> Int
+--  - A value to return in the base case when a > b, z :: Int
 higherOrderSequenceApplication = undefined
 
 -- Define a factorial method using the higherOrderSequenceAppliction
