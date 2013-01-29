@@ -21,10 +21,10 @@ fib n = head prev + head prev2 : prev
 -- Confused? Some examples: stepReverseSign 6 2 = -8
 --			    stepReverseSign -3 1 = 4
 --			    stepReverseSign 1 2 = -3
-stepReverseSign :: (Fractional a, Ord a) => a -> a
-stepReverseSign num = ((if num > 0
+stepReverseSign :: (Fractional a, Ord a) => a -> a -> a
+stepReverseSign num step = ((if num > 0
                         then -1
-                        else 1) * (abs(num) + 2))
+                        else 1) * (abs(num) + step))
 
 {- Lets calculate pi.
  - The Leibniz formula for pi (http://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80)
@@ -40,7 +40,7 @@ stepReverseSign num = ((if num > 0
  - Given a tolerance, say, 0.001, it will return a tuple.
  - fst is pi to an accuracy of the tolerance, 0.001 in this case
  - snd is the number of recursive steps taken to calculate it, after all this chapter is about recursion!
- - Example: piCalc 0.01 = (3.1420924036835256,2000)
+ - Example: piCalc 0.001 = (3.1420924036835256,2000)
 
  - The piCalc' function is defined as 
  - piCalc' :: (Ord a, Fractional a, Integral b) => a -> a -> a -> b -> (a, b)
