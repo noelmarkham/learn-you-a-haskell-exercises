@@ -17,7 +17,7 @@ fib x = undefined
 -- Confused? Some examples: stepReverseSign 6 2 = -8
 --			    stepReverseSign -3 1 = 4
 --			    stepReverseSign 1 2 = -3
-stepReverseSign :: (Fractional a, Ord a) => a -> a
+stepReverseSign :: (Fractional a, Ord a) => a -> a -> a
 stepReverseSign a = undefined
 
 {- Lets calculate pi.
