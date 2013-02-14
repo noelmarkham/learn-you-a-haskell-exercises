@@ -10,9 +10,9 @@ data List a = Empty | Value a (List a) deriving (Show)
 combineLists:: List a -> List a -> List a
 combineLists a b = undefined
 
--- Make our new List a Monoid
+-- Make our list a Monoid
 
--- Make our new List an Applicative
+-- Make our list an Applicative
 
 -- Make sure that the List obeys the laws for Applicative and Monoid
 
