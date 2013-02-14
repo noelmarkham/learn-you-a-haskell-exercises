@@ -17,7 +17,7 @@ combineLists a b = undefined
 -- Make sure that the List obeys the laws for Applicative and Monoid
 
 -- Create some lists of numbers of different lengths such as:
-twoValueList = Value 10 (Value 20 Empty)
+twoValueList = Value 10 $ Value 20 Empty
 
 -- Use <$> on the lists with a single-parameter function, such as:
 plusTwo = (+2)
