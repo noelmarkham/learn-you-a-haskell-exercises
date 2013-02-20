@@ -9,8 +9,6 @@
 
 -- Make the Validation a Monad
 
--- Make sure it passes the Monad laws
-
 
 {-
  - Create a function, positiveCheck, which takes a number and returns a successful Validation if it's positive, 
