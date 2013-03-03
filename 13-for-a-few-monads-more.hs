@@ -28,7 +28,7 @@
  -}
 
 describe :: (Show a, Eq a, Ord a) => a -> a -> [String]
-desc x y = undefined
+describe x y = undefined
 
 binarySearch :: (Show a, Ord a, Eq a, Monoid b) => (a -> a -> b) -> a -> [a] -> Writer b Bool
 binarySearch = undefined
