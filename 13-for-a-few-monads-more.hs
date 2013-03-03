@@ -7,7 +7,7 @@
  - A breakdown of the function parameters:
  -   - (a -> a -> b) : A function which is called on each comparison, passing in the search value, and the value to compare in the list. It returns a monoid value, which is used in the Writer
  -   - a : The value we are hunting for
- -   - [a] : The list we are searching for the value
+ -   - [a] : The list we are searching for the value, assumed to be ordered low to high
  -   - Writer b Bool : The return value of the Writer will be a monoid, constructed on each (recursive) search step, and a Bool value, whether we found the value in our list
  -
  - The pattern for the gcd' function in the chapter is helpful. That is: pattern match, guard and using tell and return in the do notation.
