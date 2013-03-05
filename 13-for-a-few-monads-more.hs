@@ -1,3 +1,6 @@
+import Data.Monoid
+import Control.Monad.Writer
+
 {-
  - We are going to write a binary search algorithm, which returns a Writer, so we can record the intermediate steps.
  -
@@ -29,12 +32,33 @@
  -}
 
 describe :: (Show a, Eq a, Ord a) => a -> a -> [String]
-describe x y = undefined
+describe x y
+        | x == y = [show x ++ " is equal to " ++ show y]
+        | x < y = [show x ++ " is less than " ++ show y]
+        | x > y = [show x ++ " is greater than " ++ show y]
 
-binarySearch :: (Show a, Ord a, Eq a, Monoid b) => (a -> a -> b) -> a -> [a] -> Writer b Bool
-binarySearch = undefined
+binarySearch:: (Show a, Ord a, Eq a, Monoid b) => (a -> a -> b) -> a -> [a] -> Writer b Bool
+binarySearch f x [] = do
+                return False
+binarySearch f x ys
+        | x == midpoint = do
+                tell $ f x midpoint
+                return True
+        | x < midpoint = do
+                tell $ f x midpoint
+                binarySearch f x $ take half ys
+        | otherwise = do
+                tell $ f x midpoint
+                binarySearch f x $ drop half ys
+        where half = quot (length ys) 2; midpoint = ys!!half
 
 {-
  - Investigate what other functions instead of describe can be passed to the binary search.
  - Is it possible to provide a function, so that when we do the binary search we can return a count of how many comparisons the algorithm took?
  -}
+
+counter :: a -> b -> Sum Int
+counter _ _ = Sum 1
+
+countBinarySearchSteps :: (Show a, Eq a, Ord a) => a -> [a] -> Int
+countBinarySearchSteps x ys = getSum $ snd $ runWriter $ binarySearch counter x ys
