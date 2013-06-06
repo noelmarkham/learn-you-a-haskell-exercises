@@ -12,6 +12,13 @@ englishDigit 8 = "eight"
 englishDigit 9 = "nine"
 englishDigit _ = "unknown"
 
+-- shorter solution
+englishDigit' :: Int -> String
+englishDigit' x 
+  | x < 0 || x > 9 = "unknown"
+  | otherwise = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"] !! x
+
+
 -- given a tuple, divide fst by snd, using pattern matching. 
 -- it should return undefined for division by zero
 divTuple :: (Eq a, Fractional a) => (a, a) -> a
